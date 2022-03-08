@@ -19,40 +19,51 @@ class AllocatorEXT:
 		self.num_cols = self.grid.par.cols			# Number of columns in the grid
 		self.num_rows = self.grid.par.rows			# Number of rows in the grid
 		
+		self.plots_area = self._me.par.Gridsizex.eval() * self._me.par.Gridsizey.eval() # Number of usable plot points
 		self.block_height = int(self._me.par.Blocksizey.eval()) 	# Height of the block used for road spacing
 		self.block_width = int(self._me.par.Blocksizex.eval())		# Width of the block used for road spacing
 
 		
 		# Custom parameters of the plots including sizes(read only) and counts
 		self.monolith_size = [int(self._me.par.Monolithsizex), int(self._me.par.Monolithsizey)]
-		self.monolith_count = int(self._me.par.Monolithcount)
+		self.monolith_area = 4.6875
+		self.monolith_count = int(round(0.01 * self.monolith_area * self.plots_area / (self.monolith_size[0]*self.monolith_size[1])))
 
 		self.large1_size = [int(self._me.par.Large1sizex), int(self._me.par.Large1sizey)]
-		self.large1_count = int(self._me.par.Large1count)
+		self.large1_area = 28.125
+		self.large1_count = int(round(0.01 * self.large1_area * self.plots_area / (self.large1_size[0]*self.large1_size[1])))
 
 		self.large2_size = [int(self._me.par.Large2sizex), int(self._me.par.Large2sizey)]
-		self.large2_count = int(self._me.par.Large2count)
+		self.large2_area = 10.546875
+		self.large2_count = int(round(0.01 * self.large2_area * self.plots_area / (self.large2_size[0]*self.large2_size[1])))
 
 		self.large3_size = [int(self._me.par.Large3sizex), int(self._me.par.Large3sizey)]
-		self.large3_count = int(self._me.par.Large3count)
+		self.large3_area = 10.546875
+		self.large3_count = int(round(0.01 * self.large3_area * self.plots_area / (self.large3_size[0]*self.large3_size[1])))
 
 		self.medium1_size = [int(self._me.par.Medium1sizex), int(self._me.par.Medium1sizey)]
-		self.medium1_count = int(self._me.par.Medium1count)
+		self.medium1_area = 12.5
+		self.medium1_count = int(round(0.01 * self.medium1_area * self.plots_area / (self.medium1_size[0]*self.medium1_size[1])))
 
 		self.medium2_size = [int(self._me.par.Medium2sizex), int(self._me.par.Medium2sizey)]
-		self.medium2_count = int(self._me.par.Medium2count)
+		self.medium2_area = 6.445312
+		self.medium2_count = int(round(0.01 * self.medium2_area * self.plots_area / (self.medium2_size[0]*self.medium2_size[1])))
 
 		self.medium3_size = [int(self._me.par.Medium3sizex), int(self._me.par.Medium3sizey)]
-		self.medium3_count = int(self._me.par.Medium3count)
+		self.medium3_area = 6.445312
+		self.medium3_count = int(round(0.01 * self.medium3_area * self.plots_area / (self.medium3_size[0]*self.medium3_size[1])))
 		
 		self.small1_size = [int(self._me.par.Small1sizex), int(self._me.par.Small1sizey)]
-		self.small1_count = int(self._me.par.Small1count)
+		self.small1_area = 3.662109
+		self.small1_count = int(round(0.01 * self.small1_area * self.plots_area / (self.small1_size[0]*self.small1_size[1])))
 
 		self.small2_size = [int(self._me.par.Small2sizex), int(self._me.par.Small2sizey)]
-		self.small2_count = int(self._me.par.Small2count)
+		self.small2_area = 1.953125
+		self.small2_count = int(round(0.01 * self.small2_area * self.plots_area / (self.small2_size[0]*self.small2_size[1])))
 
 		self.small3_size = [int(self._me.par.Small3sizex), int(self._me.par.Small3sizey)]
-		self.small3_count = int(self._me.par.Small3count)
+		self.small3_area = 1.953125
+		self.small3_count = int(round(0.01 * self.small3_area * self.plots_area / (self.small3_size[0]*self.small3_size[1])))
 
 
 		# Creating empty list attributes to store the various point allocations
@@ -129,40 +140,41 @@ class AllocatorEXT:
 		self.num_cols = self.grid.par.cols			# Number of columns in the grid
 		self.num_rows = self.grid.par.rows			# Number of rows in the grid
 		
+		self.plots_area = self._me.par.Gridsizex.eval() * self._me.par.Gridsizey.eval() # Number of usable plot points
 		self.block_height = int(self._me.par.Blocksizey.eval()) 	# Height of the block used for road spacing
 		self.block_width = int(self._me.par.Blocksizex.eval())		# Width of the block used for road spacing
 
 		
 		# Custom parameters of the plots including sizes(read only) and counts
 		self.monolith_size = [int(self._me.par.Monolithsizex), int(self._me.par.Monolithsizey)]
-		self.monolith_count = int(self._me.par.Monolithcount)
+		self.monolith_count = int(round(0.01 * self.monolith_area * self.plots_area / (self.monolith_size[0]*self.monolith_size[1])))
 
 		self.large1_size = [int(self._me.par.Large1sizex), int(self._me.par.Large1sizey)]
-		self.large1_count = int(self._me.par.Large1count)
+		self.large1_count = int(round(0.01 * self.large1_area * self.plots_area / (self.large1_size[0]*self.large1_size[1])))
 
 		self.large2_size = [int(self._me.par.Large2sizex), int(self._me.par.Large2sizey)]
-		self.large2_count = int(self._me.par.Large2count)
+		self.large2_count = int(round(0.01 * self.large2_area * self.plots_area / (self.large2_size[0]*self.large2_size[1])))
 
 		self.large3_size = [int(self._me.par.Large3sizex), int(self._me.par.Large3sizey)]
-		self.large3_count = int(self._me.par.Large3count)
+		self.large3_count = int(round(0.01 * self.large3_area * self.plots_area / (self.large3_size[0]*self.large3_size[1])))
 
 		self.medium1_size = [int(self._me.par.Medium1sizex), int(self._me.par.Medium1sizey)]
-		self.medium1_count = int(self._me.par.Medium1count)
+		self.medium1_count = int(round(0.01 * self.medium1_area * self.plots_area / (self.medium1_size[0]*self.medium1_size[1])))
 
 		self.medium2_size = [int(self._me.par.Medium2sizex), int(self._me.par.Medium2sizey)]
-		self.medium2_count = int(self._me.par.Medium2count)
+		self.medium2_count = int(round(0.01 * self.medium2_area * self.plots_area / (self.medium2_size[0]*self.medium2_size[1])))
 
 		self.medium3_size = [int(self._me.par.Medium3sizex), int(self._me.par.Medium3sizey)]
-		self.medium3_count = int(self._me.par.Medium3count)
+		self.medium3_count = int(round(0.01 * self.medium3_area * self.plots_area / (self.medium3_size[0]*self.medium3_size[1])))
 		
 		self.small1_size = [int(self._me.par.Small1sizex), int(self._me.par.Small1sizey)]
-		self.small1_count = int(self._me.par.Small1count)
+		self.small1_count = int(round(0.01 * self.small1_area * self.plots_area / (self.small1_size[0]*self.small1_size[1])))
 
 		self.small2_size = [int(self._me.par.Small2sizex), int(self._me.par.Small2sizey)]
-		self.small2_count = int(self._me.par.Small2count)
+		self.small2_count = int(round(0.01 * self.small2_area * self.plots_area / (self.small2_size[0]*self.small2_size[1])))
 
 		self.small3_size = [int(self._me.par.Small3sizex), int(self._me.par.Small3sizey)]
-		self.small3_count = int(self._me.par.Small3count)
+		self.small3_count = int(round(0.01 * self.small3_area * self.plots_area / (self.small3_size[0]*self.small3_size[1])))
 
 	def OnStart(self):
 		self.BuildCity()

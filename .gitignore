@@ -4,3 +4,6 @@
 #TDImportCache
 /TDImportCache/*
 
+
+CrashAutoSave.*
+*.dmp
