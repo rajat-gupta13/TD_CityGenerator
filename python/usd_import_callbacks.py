@@ -41,9 +41,9 @@ def onImport(comp, allOps, newOps):
 			#Instancing information for the geometry
 			c.parent().par.instancing = True
 			c.parent().par.instanceop = instance_op
-			c.parent().par.instancetx = 'P(0)'
-			c.parent().par.instancety = 'P(1)'
-			c.parent().par.instancetz = 'P(2)'
+			c.parent().par.instancetx = 'tx'
+			c.parent().par.instancety = 'ty'
+			c.parent().par.instancetz = 'tz'
 		
 		elif c.name == 'root':
 			#Resetting the scale of the imported model to 1 
