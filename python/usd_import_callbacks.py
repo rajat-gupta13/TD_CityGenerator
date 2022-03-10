@@ -20,7 +20,7 @@ def onImport(comp, allOps, newOps):
 			poly_reduce = c.parent().create(polyreduceSOP, f'polyreduce_{comp.name}')
 			c.outputConnectors[0].connect(poly_reduce.inputConnectors[0])
 			poly_reduce.nodeX = 200
-			poly_reduce.par.percentage = 40
+			poly_reduce.par.percentage = 36
 			poly_reduce.par.borderweight = 0.2
 			poly_reduce.par.creaseweight = 0.2
 			poly_reduce.par.lengthweight = 0.1
