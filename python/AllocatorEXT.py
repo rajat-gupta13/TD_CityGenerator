@@ -314,9 +314,11 @@ class AllocatorEXT:
 		col_start = []
 		for i in range(1, numRoadsNS+1):
 			col_start.append((i*self.block_width)+i-1)
-
+		
 		for i in range(len(col_start)):
 			for j in range(int(self.num_rows)):
+				if col_start[i] >= self.num_cols:
+					continue
 				index = int(col_start[i]+j*self.num_cols)
 				if not self.all_points[index].Allocated():
 					self.all_points[index].Allocate()
