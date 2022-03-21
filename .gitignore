@@ -1,6 +1,8 @@
 #TD Backup folder
 /Backup/*
 
+/assets/audio/*
+
 #TDImportCache
 /TDImportCache/*
 
