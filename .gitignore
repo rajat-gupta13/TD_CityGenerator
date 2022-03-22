@@ -2,6 +2,7 @@
 /Backup/*
 
 assets/audio/*
+exports/*
 
 #TDImportCache
 /TDImportCache/*

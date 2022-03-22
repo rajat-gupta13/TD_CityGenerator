@@ -25,6 +25,7 @@ def onPulse(par):
         op.CITY.AllocateInstanceGroups()
     if par.name == 'Clearmodels':
         debug('Clearing City')
+        op.AUDIO.par.Pause.pulse()
         op.LOADING.op('switch1').par.index = 0
         op.BUILDINGS.op('timer1').par.maxcycles.val = 10
         op.BUILDINGS.op('timer1').par.initialize.pulse()
