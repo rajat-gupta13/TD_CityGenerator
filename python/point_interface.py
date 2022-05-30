@@ -5,7 +5,6 @@ class Point:
     def __init__(self, index):
         self.index = index
         self.allocated = False
-        self.max_height = 0  # still need to figure out how to use this for the camera path gen
 
     def Allocated(self):
         """

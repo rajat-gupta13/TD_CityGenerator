@@ -7,7 +7,10 @@
 
 def onImport(comp, allOps, newOps):
 	
+	# path to instancing data
 	instance_op = op.ALLOCATOR.op(f'{comp.name[:-3]}/null_{comp.name[-2:]}')
+
+	# creating a path to the textures folder for the respective usd
 	tex_path = comp.par.file.val[:-18]+f'textures/{comp.name}'
 
 	for c in allOps:
